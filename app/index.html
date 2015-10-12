@@ -2,7 +2,7 @@
 <html lang="">
   <head>
     <meta charset="utf-8">
-    <title>rock paper scissors</title>
+    <title>Rock Paper Scissors</title>
     <meta name="description" content="">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
@@ -15,6 +15,7 @@
     <!-- endbower -->
     <!-- endbuild -->
     <!-- build:css(.tmp) styles/main.css -->
+    <link href='https://fonts.googleapis.com/css?family=Roboto' rel='stylesheet' type='text/css'>
     <link rel="stylesheet" href="styles/main.css">
     <!-- endbuild -->
   </head>
@@ -30,27 +31,42 @@
     <!-- endbower -->
     <!-- endbuild -->
 
-    <button data-id="rock">Rock</button>
-    <button data-id="paper">Paper</button>
-    <button data-id="scissors">Scissors</button>
+    <div id="main_wrapper">
+
+      <h1>Rock | Paper | Scissors</h1>
+      
+      <section class="options_container">
+        <h2>Make your choice</h2>
+        <button data-id="rock">
+          <img src="images/rock.png" alt="rock">
+        </button>
+        <button data-id="paper">
+          <img src="images/paper.png" alt="paper">
+        </button>
+        <button data-id="scissors">
+          <img src="images/scissors.png" alt="scissors">
+        </button>
+      </section>
   
-    <div>
-      <p id="results"></p>
-    </div>
+      <section id="feedback">
+        <p></p>
+      </section>
   
-    <div id="score">
-      <div id="user_score">
-        <h3>Your score:</h3>
-        <p>0</p>
-      </div>
-      <div id="computer_score">
-        <h3>Computer score:</h3>
-        <p>0</p>
-      </div>
-    </div>
+      <section id="score">
+        <div id="user_score">
+          <h3>Your score</h3>
+          <p>0</p>
+        </div>
+        <div id="computer_score">
+          <h3>Computer score</h3>
+          <p>0</p>
+        </div>
+      </section>
   
-    <div>
-      <p id="end_game"></p>
+      <section id="game_results">
+        <p></p>  
+      </section>
+
     </div>
 
     <!-- build:js scripts/main.js -->
