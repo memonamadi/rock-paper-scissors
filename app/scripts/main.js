@@ -4,11 +4,11 @@
 
 	$("button").on("click", function() {
   
-  		var userChoice = this.dataset.id;
+  		var userChoice = $("button").data("id");
   		var choices = ["rock", "paper", "scissors"];
   		var computerChoice = choices[Math.floor(Math.random() * choices.length)];
-  		var showResult = document.getElementById("results");
-  		var scoreContainer = document.getElementById("score");
+  		var showResult = $("#feedback p");
+  		var scoreContainer = $("#score");
   		var userScoreContainer = $("#user_score p");
   		var computerScoreContainer = $("#computer_score p");
   		var userScore = 0;
@@ -17,17 +17,15 @@
   		var computerOldScore = computerScoreContainer.html();
   		var userNewScore;
   		var computerNewScore;
-  		var gameResult = $("#end_game");
+  		var gameResult = $("#game_results p");
 
   		results(userChoice, computerChoice);
 
-  		if(endOfGame)
-  			{
-  				console.log('end of game');
-  				endOfGame = false;
-  				resetScore();
-  				resetEndGameMessage();
-  			}
+  		if(endOfGame) {
+  			endOfGame = false;
+  			resetScore();
+  			resetEndGameMessage();
+  		}
 
   		endGameMessage();
 
@@ -51,17 +49,17 @@
         
         			switch(choice2) {
           				case obj[i].defeats:
-            				showResult.innerHTML = obj[i].name + " defeats " + obj[i].defeats;
+            				showResult.html(obj[i].name + " defeats " + obj[i].defeats);
             				userNewScore = parseFloat(userOldScore) + 1;
             				userScoreContainer.html(userNewScore);
             				break;
           				case obj[i].loses:
-            				showResult.innerHTML = obj[i].name + " loses to " + obj[i].loses;
+            				showResult.html(obj[i].name + " loses to " + obj[i].loses);
             				computerNewScore = parseFloat(computerOldScore) + 1;
             				computerScoreContainer.html(computerNewScore);
             				break;
           				case obj[i].name:
-            				showResult.innerHTML = obj[i].name + " ties " + obj[i].name;
+            				showResult.html(obj[i].name + " ties " + obj[i].name);
             				break;
         			}
 
@@ -94,4 +92,4 @@
  		
 	}); // end click event
 
-})();
+})(); 
