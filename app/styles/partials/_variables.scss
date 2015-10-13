@@ -14,8 +14,14 @@ $h2-m: 2em;
 $h2-l: 2.25em;
 
 $line-height: 1.6;
+$letter-spacing: 0.04em;
 
 // Colours
 $black: #000000;
 $white: #ffffff;
-$blue: #1695A3;
+$blue: #00CFFF;
+
+// Breakpoints
+$break-small: 600px;
+$break-medium: 1024px;
+$break-large: 1400px;

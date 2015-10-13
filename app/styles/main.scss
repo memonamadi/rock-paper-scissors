@@ -12,8 +12,13 @@ body {
   font-size: $body-font-size;
   font-family: 'Roboto', sans-serif;
   line-height: $line-height;
+  letter-spacing: $letter-spacing;
   width: 100%;
   height: 100%;
+}
+
+p {
+  font-size: $font-size-l;
 }
 
 #main_wrapper {
@@ -24,27 +29,82 @@ body {
   text-align: center;
   h1 {
     font-size: $h1-s;
-    padding: 10% 0;
+    padding: 30px 0;
   }
 }
 
 .options_container {
-  padding: 100px 0;
+  margin: 50px 0;
+  position: relative;
   h2 {
     font-size: $h2-s;
-    padding: 25px 0;
+    margin-bottom: 20px;
   }
+  .centered {
+    button {
+      width: 120px;
+      height: 120px;
+      padding: 0 10px;
+      border: 2px solid $black;
+      border-radius: 5px;
+      background-color: $white;
+      outline: none;
+      &.selected {
+        background-color: $blue;
+      }
+      img {
+        width: 100%;
+      }
+
+    }
+
+  }
+
+}
+
+#feedback {
+  padding: 0 0 50px;
+}
+
+#score {
+  font-size: $font-size-l;
+  #user_score {
+    margin-bottom: 20px;
+  }
+  p {
+    color: $blue;
+  }
+}
+
+#game_results {
+  margin: 50px 0;
+  p {
+    color: $blue;
+  }
+}
+
+#reset {
   button {
-    width: 120px;
-    height: 120px;
-    padding: 0 10px;
-    border: 2px solid $black;
+    width: 150px;
+    padding: 10px 0;
     border-radius: 5px;
-    background-color: $white;
+    background-color: white;
+    border: 2px solid $blue;
     outline: none;
-    img {
-      max-width: 90%;
+    &:active {
+      border: 2px solid $black;
     }
   }
 }
 
+// Media Queries
+@media screen and (min-width: $break-small) {
+  button {
+    margin: 0 5px;
+  }
+}
+@media screen and (min-width: $break-medium) {
+  .options_container {
+    margin: 80px 0;
+  }
+}
