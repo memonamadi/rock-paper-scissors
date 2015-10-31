@@ -1,18 +1,16 @@
 (function() {
 
-  var button = $("button");
 	var endOfGame = false;
 
-	$(button).on("click", function() {
-    
-  		var userChoice = $(this).data("id");
+	$("button").on("click", function() {
+  
+  		var userChoice = $("button").data("id");
   		var choices = ["rock", "paper", "scissors"];
   		var computerChoice = choices[Math.floor(Math.random() * choices.length)];
   		var showResult = $("#feedback p");
   		var scoreContainer = $("#score");
   		var userScoreContainer = $("#user_score p");
   		var computerScoreContainer = $("#computer_score p");
-      var resetButton = $("#reset button");
   		var userScore = 0;
   		var computerScore = 0;
   		var userOldScore = userScoreContainer.html();
@@ -25,28 +23,13 @@
 
   		results(userChoice, computerChoice);
 
-      function resetGame() {
-        $(resetButton).on("click", function() {
-          if(endOfGame) {
-            endOfGame = false;
-            resetScore();
-            resetEndGameMessage();
-          }
-          $(button).removeClass("selected");
-          $(showResult).html("");
-        });
-
-      }
+  		if(endOfGame) {
+  			endOfGame = false;
+  			resetScore();
+  			resetEndGameMessage();
+  		}
 
   		endGameMessage();
-      resetGame();
-
-      function buttonChangeState() {
-        $(event.target).parent().addClass("selected").siblings().removeClass("selected");
-      }
-
-      buttonChangeState();
-
       playAgain();
 
   		function results(choice1, choice2) {
@@ -69,17 +52,17 @@
         
         			switch(choice2) {
           				case obj[i].defeats:
-            				showResult.html(obj[i].name + " defeats " + obj[i].defeats + "!");
+            				showResult.html(obj[i].name + " defeats " + obj[i].defeats);
             				userNewScore = parseFloat(userOldScore) + 1;
             				userScoreContainer.html(userNewScore);
             				break;
           				case obj[i].loses:
-            				showResult.html(obj[i].name + " loses to " + obj[i].loses + "!");
+            				showResult.html(obj[i].name + " loses to " + obj[i].loses);
             				computerNewScore = parseFloat(computerOldScore) + 1;
             				computerScoreContainer.html(computerNewScore);
             				break;
           				case obj[i].name:
-            				showResult.html(obj[i].name + " ties " + obj[i].name + "!");
+            				showResult.html(obj[i].name + " ties " + obj[i].name);
             				break;
         			}
 
