@@ -4,7 +4,7 @@
 
 	$("button").on("click", function() {
   
-  		var userChoice = $("button").data("id");
+  		var userChoice = $(this).data("id");
   		var choices = ["rock", "paper", "scissors"];
   		var computerChoice = choices[Math.floor(Math.random() * choices.length)];
   		var showResult = $("#feedback p");
@@ -49,6 +49,7 @@
     		for(var i = 0; i < obj.length; i++) {
       
       			if(obj[i].name === choice1) {
+              console.log(choice1);
         
         			switch(choice2) {
           				case obj[i].defeats:
