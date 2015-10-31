@@ -17,7 +17,9 @@
   		var computerOldScore = computerScoreContainer.html();
   		var userNewScore;
   		var computerNewScore;
-  		var gameResult = $("#game_results p");
+      var overlay = $("#overlay");
+  		var gameResult = $("#overlay p");
+      var playAgainButton = $("#overlay button");
 
   		results(userChoice, computerChoice);
 
@@ -28,6 +30,8 @@
   		}
 
   		endGameMessage();
+
+      playAgain();
 
   		function results(choice1, choice2) {
     
@@ -78,17 +82,26 @@
   
   		function endGameMessage() {
     		if(userNewScore == 5) {
-      			$(gameResult).append("You win the game!");
+            $(overlay).addClass('visible');
+      			$(gameResult).append("YOU WIN!");
       			endOfGame = true;
     		} else if(computerNewScore == 5) {
-      			$(gameResult).append("Computer wins the game!");
+            $(overlay).addClass('visible');
+      			$(gameResult).append("GAME OVER!");
       			endOfGame = true;
     		}
   		}
 
   		function resetEndGameMessage() {
     		$(gameResult).html("");
+        $(showResult).html("");
   		}
+
+      function playAgain() {
+        $(playAgainButton).on('click', function(){
+          $(overlay).removeClass('visible');
+        });
+      }
  		
 	}); // end click event
 
