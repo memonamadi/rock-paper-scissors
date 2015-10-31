@@ -14,9 +14,21 @@ $h2-m: 2em;
 $h2-l: 2.25em;
 
 $line-height: 1.6;
+$letter-spacing: 0.04em;
 
 // Colours
+<<<<<<< HEAD
 $darkgrey: #333333;
 $yellow: #FFBF02;
 
 
+=======
+$black: #000000;
+$white: #ffffff;
+$blue: #00CFFF;
+
+// Breakpoints
+$break-small: 600px;
+$break-medium: 1024px;
+$break-large: 1400px;
+>>>>>>> 03331fd7ccf915346606ff89f29ceece63242103
