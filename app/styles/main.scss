@@ -2,13 +2,19 @@
 // endbower
 
 @font-face {
-    font-family: Futura Bold;
-    src: url('../fonts/futura_bold.ttf');
+  font-family: 'Futura Bold';
+  src: url('../fonts/futura_bold.eot'); /* IE9 Compat Modes */
+  src: url('../fonts/futura_bold.woff2') format('woff2'), /* Super Modern Browsers */
+       url('../fonts/futura_bold.woff') format('woff'), /* Pretty Modern Browsers */
+       url('../fonts/futura_bold.ttf')  format('truetype'); /* Safari, Android, iOS */
 }
 
 @font-face {
-    font-family: Futura Light;
-    src: url('../fonts/futura_light.ttf');
+  font-family: 'Futura Light';
+  src: url('../fonts/futura_light.eot'); /* IE9 Compat Modes */
+  src: url('../fonts/futura_light.woff2') format('woff2'), /* Super Modern Browsers */
+       url('../fonts/futura_light.woff') format('woff'), /* Pretty Modern Browsers */
+       url('../fonts/futura_light.ttf')  format('truetype'); /* Safari, Android, iOS */
 }
 
 @import 'partials/_reset';
